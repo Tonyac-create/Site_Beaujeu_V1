@@ -1,0 +1,202 @@
+:root {
+  --link: #dc3545;
+  --text: #1e1e1e;
+  --title: #ffffff;
+  --background: #a6a6a6;
+  --hint: #c0b9b9;
+  --shadow: #cccc00;
+  --font-family: "Kaushan Script", sans-serif;
+  --font-family-p: "Sarabun", sans-serif; }
+
+html {
+  font-size: 62.5%; }
+
+p {
+  font-family: var(--font-family-p); }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family); }
+
+img {
+  max-width: 100%; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: var(--text);
+  font-family: var(--font-family-p); }
+  a:hover {
+    color: var(--shadow);
+    transition: all 0.3s; }
+
+em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--link); }
+
+span {
+  display: inline-block;
+  animation: bounce 3s; }
+
+header {
+  background: linear-gradient(to right, var(--background), var(--title)); }
+
+.header {
+  box-shadow: 1px -2px 15px; }
+
+.active {
+  opacity: 0.7;
+  color: var(--title); }
+
+@keyframes bounce {
+  0% {
+    transform: rotate(0deg); }
+  20% {
+    transform: rotate(45deg); }
+  40% {
+    transform: rotate(75deg); }
+  60% {
+    transform: rotate(-45deg); }
+  80% {
+    transform: rotate(-75deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+@keyframes slideIn {
+  from {
+    margin-left: 100%;
+    width: 200%; }
+  to {
+    margin-left: 0%;
+    width: 100%; } }
+
+/* Landscape phones and down */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.container {
+  display: block;
+  min-height: 100vh;
+  margin: 0; }
+  @media (max-width: 480px) {
+    .container {
+      display: grid;
+      grid: "header" auto "first-content" auto "last-content" auto "footer" auto / auto; } }
+
+header {
+  display: grid;
+  grid: "blason h3 other" auto "blason h5 other" auto / 150px 1fr 150px;
+  padding: 2.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--text); }
+  @media (max-width: 480px) {
+    header {
+      grid-area: header; } }
+  header h3 {
+    grid-area: h3;
+    font-size: 3.5rem;
+    margin: 2rem 0;
+    letter-spacing: 1rem;
+    text-shadow: 1px 1px var(--shadow); }
+  header h5 {
+    grid-area: h5;
+    font-size: 1.6rem;
+    margin-bottom: 2.5rem;
+    color: var(--text);
+    font-weight: 400;
+    letter-spacing: 0.3rem; }
+  header .blason {
+    grid-area: blason; }
+  header .other-page {
+    grid-area: other;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    header .other-page ul li {
+      padding: 1rem 0;
+      font-size: 1.5rem;
+      border-bottom: 1px dotted var(--text); }
+
+.first-content {
+  flex: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: url(/img/MontBrouilly_WB.jpg) center center/cover;
+  min-height: 400px; }
+  @media (max-width: 480px) {
+    .first-content {
+      grid-area: first-content; } }
+
+.content {
+  max-width: 700px;
+  padding: 2rem 0; }
+  .content h2 {
+    color: var(--title);
+    font-size: 3rem;
+    letter-spacing: 0.5rem; }
+
+.last-content {
+  display: grid;
+  place-content: center center;
+  grid: "h4 h4" 50px "spring summer" auto "autumn winter" auto / 400px 400px;
+  gap: 4rem 4rem;
+  background: linear-gradient(var(--text) 30%, 50%, var(--background) 90%);
+  border-top: 1px solid var(--text); }
+  @media (max-width: 480px) {
+    .last-content {
+      grid-area: last-content; } }
+  .last-content h4 {
+    margin-top: 1rem;
+    color: var(--title);
+    opacity: 0.6;
+    grid-area: h4;
+    text-align: center;
+    font-size: 3rem; }
+  .last-content .page {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center; }
+    .last-content .page img {
+      border-radius: 2rem; }
+  .last-content a {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    background: var(--text);
+    color: var(--title);
+    opacity: 0.7;
+    font-family: var(--font-family-p);
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: 0;
+    border-radius: 3rem;
+    box-shadow: 2px 2px 2px var(--title); }
+    .last-content a:hover {
+      background: var(--shadow);
+      color: var(--text);
+      transition: all 0.2s;
+      transform: scale(1.1); }
+
+footer {
+  min-height: 50px;
+  background: linear-gradient(to top, var(--text), var(--background)); }
+  @media (max-width: 480px) {
+    footer {
+      grid-area: footer; } }
+  footer p {
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 1rem;
+    color: var(--title);
+    font-family: var(--font-family); }

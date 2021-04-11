@@ -1,0 +1,59 @@
+html {
+  font-size: 62.5%;
+}
+
+p {
+  font-family: var(--font-family-p);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family);
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text);
+  font-family: var(--font-family-p);
+
+  &:hover {
+    color: var(--shadow);
+    transition: all 0.3s;
+  }
+}
+
+em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--link);
+}
+
+span {
+  display: inline-block;
+  animation: bounce 3s;
+}
+
+header {
+  background: linear-gradient(to right, var(--background), var(--title));
+}
+
+.header {
+  box-shadow: 1px -2px 15px;
+}
+
+.active {
+  opacity: 0.7;
+  color: var(--title);
+}
