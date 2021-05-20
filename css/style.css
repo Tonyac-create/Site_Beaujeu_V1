@@ -34,7 +34,8 @@ a {
   font-family: var(--font-family-p); }
   a:hover {
     color: var(--shadow);
-    transition: all 0.3s; }
+    transition: all 0.3s;
+    text-decoration: none; }
 
 em {
   font-style: normal;
@@ -87,7 +88,7 @@ header {
   box-sizing: border-box; }
 
 .container {
-  display: block;
+  display: contents;
   min-height: 100vh;
   margin: 0; }
   @media (max-width: 480px) {
@@ -161,6 +162,13 @@ header {
   gap: 4rem 4rem;
   background: linear-gradient(var(--text) 30%, 50%, var(--background) 90%);
   border-top: 1px solid var(--text); }
+  .last-content h4 {
+    margin-top: 1rem;
+    color: var(--title);
+    opacity: 0.6;
+    grid-area: h4;
+    text-align: center;
+    font-size: 3rem; }
   @media (max-width: 480px) {
     .last-content {
       grid-area: last-content;
@@ -171,21 +179,15 @@ header {
   @media (min-width: 768px) and (max-width: 979px) {
     .last-content {
       grid: "h4 h4" auto "spring summer" auto "autumn winter" auto / auto auto; } }
-  .last-content h4 {
-    margin-top: 1rem;
-    color: var(--title);
-    opacity: 0.6;
-    grid-area: h4;
-    text-align: center;
-    font-size: 3rem; }
-  .last-content .page {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center; }
-    .last-content .page img {
-      border-radius: 2rem; }
-  .last-content a {
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center; }
+  .page img {
+    border-radius: 2rem; }
+  .page a {
     margin: 1rem 0;
     padding: 0.5rem 1rem;
     background: var(--text);
@@ -195,9 +197,9 @@ header {
     font-size: 1.5rem;
     font-weight: 700;
     border: 0;
-    border-radius: 3rem;
+    border-radius: 1rem;
     box-shadow: 2px 2px 2px var(--title); }
-    .last-content a:hover {
+    .page a:hover {
       background: var(--shadow);
       color: var(--text);
       transition: all 0.2s;

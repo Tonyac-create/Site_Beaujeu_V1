@@ -34,7 +34,8 @@ a {
   font-family: var(--font-family-p); }
   a:hover {
     color: var(--shadow);
-    transition: all 0.3s; }
+    transition: all 0.3s;
+    text-decoration: none; }
 
 em {
   font-style: normal;
@@ -142,6 +143,8 @@ header {
     flex-direction: column;
     background: linear-gradient(to bottom, var(--background), 50%, var(--text)); }
     .content-img .contain .content-list {
+      display: flex;
+      flex-wrap: wrap;
       margin-left: 4rem;
       margin-top: 3rem; }
       .content-img .contain .content-list img {

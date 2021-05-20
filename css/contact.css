@@ -34,7 +34,8 @@ a {
   font-family: var(--font-family-p); }
   a:hover {
     color: var(--shadow);
-    transition: all 0.3s; }
+    transition: all 0.3s;
+    text-decoration: none; }
 
 em {
   font-style: normal;
