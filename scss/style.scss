@@ -12,6 +12,7 @@
 .container {
   display: block;
   @include xs {
+    min-height: 100vh;
     display: grid;
     grid:
       "header" auto
@@ -30,6 +31,21 @@ header {
   display: grid;
   @include xs {
     grid-area: header;
+    grid:
+      "blason" auto
+      "h3" auto
+      "h5" auto
+      "other" auto
+      / auto;
+  }
+  @include sm {
+    grid-area: header;
+    grid:
+      "blason" auto
+      "h3" auto
+      "h5" auto
+      "other" auto
+      / auto;
   }
   grid:
     "blason h3 other" auto
@@ -99,6 +115,27 @@ header {
   place-content: center center;
   @include xs {
     grid-area: last-content;
+    grid:
+      "h4" auto
+      "spring" auto
+      "summer" auto
+      "autumn" auto
+      "winter" auto
+      / auto;
+  }
+  @include sm {
+    grid:
+      "h4 h4" auto
+      "spring summer" auto
+      "autumn winter" auto
+      / auto auto;
+  }
+  @include md {
+    grid:
+      "h4 h4" auto
+      "spring summer" auto
+      "autumn winter" auto
+      / auto auto;
   }
   grid:
     "h4 h4" 50px

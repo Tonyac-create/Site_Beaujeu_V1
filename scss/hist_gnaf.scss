@@ -1,6 +1,7 @@
 @import "variables";
 @import "general";
 @import "animation";
+@import "media_queries";
 
 * {
   margin: 0;
@@ -10,6 +11,18 @@
 
 .container {
   display: block;
+  @include xs {
+    min-height: 100vh;
+    display: grid;
+    grid:
+      "header" auto
+      "title" auto
+      "maps" auto
+      "aside" auto
+      "main" auto
+      "utils" auto
+      / auto;
+  }
   min-height: 100vh;
   margin: 0;
 }
@@ -17,6 +30,9 @@
 // header
 
 header {
+  @include xs {
+    grid-area: header;
+  }
   min-height: 5rem;
   box-shadow: 0 8px 15px;
   ul {
@@ -24,7 +40,17 @@ header {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
+
+    @include xs {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
     li {
+      @include xs {
+        margin: 0.6rem 0;
+      }
       a {
         font-size: 1.6rem;
         cursor: pointer;
@@ -37,6 +63,11 @@ header {
 }
 
 h3 {
+  @include xs {
+    grid-area: title;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
   font-size: 3rem;
   margin-top: 1rem;
   text-align: center;
@@ -48,6 +79,9 @@ h3 {
 // maps
 
 .maps {
+  @include xs {
+    grid-area: maps;
+  }
   box-shadow: 8px 0 15px;
   background: linear-gradient(to right, var(--background), var(--title));
   .content-maps {
@@ -81,6 +115,13 @@ h3 {
   padding: 1rem;
   background: linear-gradient(to top, var(--background), var(--title));
   border-radius: 5px;
+  @include xs {
+    grid:
+      "aside" auto
+      "p" auto
+      "utils" auto
+      / auto;
+  }
   display: grid;
   grid:
     "aside p" 150px
@@ -93,6 +134,8 @@ h3 {
   column-gap: 1.2rem;
   row-gap: 2rem;
   main {
+    @include xs {
+    }
     grid-area: p;
     p {
       font-size: 1.5rem;
@@ -124,6 +167,9 @@ h3 {
   }
 
   .utils {
+    @include xs {
+      grid-area: utils;
+    }
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -147,6 +193,28 @@ h3 {
 // contain
 
 .gnafron {
+  @include xs {
+    display: grid;
+    grid:
+      "h3" auto
+      "row" auto
+      "row-reverse" auto
+      / auto;
+    h3 {
+      grid-area: h3;
+    }
+  }
+  @include md {
+    display: grid;
+    grid:
+      "h3" auto
+      "row" auto
+      "row-reverse" auto
+      / auto;
+    h3 {
+      grid-area: h3;
+    }
+  }
   margin: 2rem 1rem;
   .row p,
   .row-reverse p {
@@ -155,10 +223,40 @@ h3 {
     letter-spacing: 0.2rem;
   }
   .row {
+    @include xs {
+      grid-area: row;
+      display: flex;
+      flex-direction: column;
+    }
+    @include sm {
+      grid-area: row-reverse;
+      display: flex;
+      flex-direction: column;
+    }
+    @include md {
+      grid-area: row;
+      display: flex;
+      flex-direction: column;
+    }
     display: flex;
     flex-direction: row;
   }
   .row-reverse {
+    @include xs {
+      grid-area: row-reverse;
+      display: flex;
+      flex-direction: column;
+    }
+    @include sm {
+      grid-area: row-reverse;
+      display: flex;
+      flex-direction: column;
+    }
+    @include md {
+      grid-area: row-reverse;
+      display: flex;
+      flex-direction: column;
+    }
     display: flex;
     flex-direction: row-reverse;
   }

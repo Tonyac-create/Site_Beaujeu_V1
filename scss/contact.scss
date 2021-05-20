@@ -1,6 +1,7 @@
 @import "variables";
 @import "general";
 @import "animation";
+@import "media_queries";
 
 * {
   margin: 0;
@@ -10,6 +11,14 @@
 
 .container {
   display: block;
+  @include xs {
+    display: grid;
+    grid:
+      "header" auto
+      "main" auto
+      "footer" auto
+      / auto;
+  }
   min-height: 100vh;
   margin: 0;
 }
@@ -19,12 +28,24 @@
 header {
   min-height: 5rem;
   box-shadow: 2px -2px 15px;
+  @include xs {
+    grid-area: header;
+  }
   ul {
     padding: 1rem 0;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
+    @include xs {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
     li {
+      @include xs {
+        margin: 0.6rem 0;
+      }
       a {
         font-size: 1.6rem;
         cursor: pointer;
@@ -39,6 +60,9 @@ header {
 // main
 
 main {
+  @include xs {
+    grid-area: main;
+  }
   margin: 5rem 2rem;
   min-height: 100vh;
   h4 {
@@ -100,6 +124,9 @@ main {
 // footer
 
 footer {
+  @include xs {
+    grid-area: footer;
+  }
   min-height: 50px;
   background: linear-gradient(to top, var(--text), var(--background));
   box-shadow: 1px 0px 15px;

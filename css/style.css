@@ -78,6 +78,9 @@ header {
     width: 100%; } }
 
 /* Landscape phones and down */
+/* Landscape phone to portrait tablet */
+/* Portrait tablet to landscape and desktop */
+/* Large desktop */
 * {
   margin: 0;
   padding: 0;
@@ -89,6 +92,7 @@ header {
   margin: 0; }
   @media (max-width: 480px) {
     .container {
+      min-height: 100vh;
       display: grid;
       grid: "header" auto "first-content" auto "last-content" auto "footer" auto / auto; } }
 
@@ -100,7 +104,12 @@ header {
   border-bottom: 1px solid var(--text); }
   @media (max-width: 480px) {
     header {
-      grid-area: header; } }
+      grid-area: header;
+      grid: "blason" auto "h3" auto "h5" auto "other" auto / auto; } }
+  @media (max-width: 767px) {
+    header {
+      grid-area: header;
+      grid: "blason" auto "h3" auto "h5" auto "other" auto / auto; } }
   header h3 {
     grid-area: h3;
     font-size: 3.5rem;
@@ -154,7 +163,14 @@ header {
   border-top: 1px solid var(--text); }
   @media (max-width: 480px) {
     .last-content {
-      grid-area: last-content; } }
+      grid-area: last-content;
+      grid: "h4" auto "spring" auto "summer" auto "autumn" auto "winter" auto / auto; } }
+  @media (max-width: 767px) {
+    .last-content {
+      grid: "h4 h4" auto "spring summer" auto "autumn winter" auto / auto auto; } }
+  @media (min-width: 768px) and (max-width: 979px) {
+    .last-content {
+      grid: "h4 h4" auto "spring summer" auto "autumn winter" auto / auto auto; } }
   .last-content h4 {
     margin-top: 1rem;
     color: var(--title);

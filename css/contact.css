@@ -77,6 +77,10 @@ header {
     margin-left: 0%;
     width: 100%; } }
 
+/* Landscape phones and down */
+/* Landscape phone to portrait tablet */
+/* Portrait tablet to landscape and desktop */
+/* Large desktop */
 * {
   margin: 0;
   padding: 0;
@@ -86,15 +90,31 @@ header {
   display: block;
   min-height: 100vh;
   margin: 0; }
+  @media (max-width: 480px) {
+    .container {
+      display: grid;
+      grid: "header" auto "main" auto "footer" auto / auto; } }
 
 header {
   min-height: 5rem;
   box-shadow: 2px -2px 15px; }
+  @media (max-width: 480px) {
+    header {
+      grid-area: header; } }
   header ul {
     padding: 1rem 0;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly; }
+    @media (max-width: 480px) {
+      header ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; } }
+    @media (max-width: 480px) {
+      header ul li {
+        margin: 0.6rem 0; } }
     header ul li a {
       font-size: 1.6rem;
       cursor: pointer; }
@@ -104,6 +124,9 @@ header {
 main {
   margin: 5rem 2rem;
   min-height: 100vh; }
+  @media (max-width: 480px) {
+    main {
+      grid-area: main; } }
   main h4 {
     font-size: 3rem;
     text-align: center;
@@ -152,6 +175,9 @@ footer {
   min-height: 50px;
   background: linear-gradient(to top, var(--text), var(--background));
   box-shadow: 1px 0px 15px; }
+  @media (max-width: 480px) {
+    footer {
+      grid-area: footer; } }
   footer p {
     font-size: 2rem;
     font-weight: 500;
